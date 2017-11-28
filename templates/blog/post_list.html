@@ -1,0 +1,9 @@
+{% extends "blog/header.html" %}
+
+{% block content %}
+<a href="{% url 'new_post' %}">NewPost</a>
+
+{% for p in object_list %}
+    <h2>{{ p.posted|date:"Y-m-d H:i" }} <a href="/blog/post/{{p.id}}">{{p.title}}</a></h2>
+{% endfor %}
+{% endblock %}
